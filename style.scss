@@ -1,0 +1,471 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.center {
+    padding-left: calc(50% - 660px);
+    padding-right: calc(50% - 660px);
+}
+body {
+    overflow-x: hidden;
+    font-family: 'Anonymous Pro', monospace;
+}
+a {
+    text-decoration: none;
+}
+
+$base-purple: #826DEE;
+$base-yellow: #FFDB15;
+$base-red: #F94500;
+$base-pink: #FF99DC;
+$baseFontSize: 24px;
+$smallFontSize: 16px;
+$titleFontSize: 64px;
+
+.top {
+    background-color: $base-pink;
+    height: 90vh;
+    position: relative;
+
+    &__scroll {
+        height: 40px;
+        position: absolute;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        bottom: 0;
+        left: 0;
+        animation: scroll-left 5s linear infinite;
+    }
+}
+@keyframes scroll-left {
+    from {
+        transform: translateX(0%);
+    }
+    to {
+        transform: translateX(-20%);
+    }
+}
+.content-text {
+    display: flex;
+    padding-top: 36px;
+    padding-left: 36px;
+    padding-right: 36px;
+}
+.typewriter {
+    overflow: hidden; 
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+}
+
+.top-title {
+    color: $base-purple;
+    font-size: 120px;
+    padding-left: 350px;
+}
+.top-text {
+   color: $base-purple; 
+   padding: 20px;
+   max-width: 360px;
+   margin-top: 100px;
+   box-sizing: border-box;
+   height: min-content;
+    border: solid #826DEE 2px;
+    border-radius: 8px;
+}
+.top-text:hover {
+    box-shadow: -8px 5px 3px 3px rgba(255, 255, 255, 0.5);
+}
+
+.section2 {
+    background: $base-pink;
+    padding-bottom: 30px;
+}
+.section {
+    &__content {
+        display: flex;
+        background: $base-purple;
+        border-radius: 50px;
+        margin: 40px;
+    }
+    padding-top: 60px;
+}
+.buttons-box {
+    display: flex;
+    border: solid 2px #826DEE;
+    border-radius: 40px;
+    // width: 200px;
+    // height: 400px;
+    padding: 40px;
+    margin-left: 100px;
+    flex-direction: column;
+    gap: 24px;
+    &__btn {
+        border-radius: 20px;
+        box-sizing: border-box;
+        text-align: center;
+        font-family: 'Anonymous Pro', monospace;
+        font-size: $baseFontSize;
+        padding: 12px;
+        max-width: 270px;
+    }
+    &__btn1 {
+        background-color: #ffffff;
+        transition: color 0.5s ease, transform 0.7s ease;
+        border: solid 2px #000000;
+    }
+    &__btn1:hover {
+        background-color: $base-red;
+        transform: scale(1.05); 
+        color: $base-yellow;
+        box-shadow: -3px 3px 3px 1px rgba(255, 219, 21, 1);
+    }
+    &__btn2 {
+        border: solid 2px #000000;
+    }
+    &__btn2:active {
+        transform: translateY(3px);
+    }
+    &__btn3 {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: solid 2px #000000;
+    }
+    &__btn3:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 0px 3px rgba(0, 0, 0, 0.2);
+        background-color: $base-pink;
+        color: $base-purple;
+    }
+    &__btn4 {
+        transition: transform 0.1s ease, box-shadow 0.1s ease;
+        border: solid 2px #000000;
+    }
+    &__btn4:hover {
+        background-color: $base-yellow;
+        transform: translateY(4px);
+        box-shadow: 0 -4px 0 3px rgba(0, 0, 0, 0.2);
+    }
+    &__btn5 {
+        border: solid 2px #000000;
+        transition: .2s linear;
+    }
+    &__btn5:hover {
+        transform: rotateZ(5deg);
+    }
+}
+.content-box {
+    padding: 40px;
+    padding-left: 100px;
+    &__ul {
+        display: flex;
+        flex-direction: row;
+        font-family: 'Anonymous Pro', monospace;
+        padding-top: 24px;
+        gap: 64px;
+        font-size: $baseFontSize;
+    }
+    &__text-title {
+        font-size: $titleFontSize;
+        border-bottom: solid 2px #000000;
+    }
+    
+    &__text-p {
+        font-size: $baseFontSize;
+        padding-top: 32px;
+        padding-right: 40px;
+    }
+    &__text-p::selection {
+        background-color: $base-yellow;
+        color: $base-red;
+    }
+}
+.firstUl, .secondUl, .thirdUl {
+    list-style-type: none;
+    &__item {
+        padding-bottom: 12px;
+    }
+}
+.firstUl {
+    list-style: none;
+    padding-left: 0;
+}
+
+.firstUl__item {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+}
+
+.firstUl__item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 30%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-image: url(star3.svg);
+    background-size: cover;
+    transition: transform 0.3s ease;
+}
+
+.firstUl__item:hover::before {
+    transform: translateY(-50%) rotate(45deg); /* Вращение при наведении */
+}
+.secondUl__item {
+    position: relative; /* Для позиционирования линии */
+    padding-bottom: 10px; /* Отступ для линии */
+    margin-bottom: 20px; /* Отступ между элементами списка */
+    font-size: 20px; /* Размер текста */
+}
+
+.underline {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 500%; /* Линия на всю ширину элемента */
+    height: 100px; /* Высота линии */
+    stroke-dasharray: 2000; /* Длина штрихов */
+    stroke-dashoffset: 2000; /* Смещение штрихов */
+    transition: stroke-dashoffset 1s ease; /* Анимация */
+}
+
+.secondUl__item:hover .underline {
+    stroke-dashoffset: 0; /* Анимация линии */
+}
+
+.section3 {
+    background-image: url(bg3.svg);
+    background-repeat: no-repeat;
+    // background-position: 0 0;
+    min-height: 300px;
+    display: flex;
+    position: relative;
+    &__item-1 {
+        display: flex;
+    }
+}
+
+.menu-1 {
+    padding: 48px;
+    height: 200px;
+    background-color: $base-red;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    margin-left: 40px;
+    font-size: $baseFontSize;
+    &__link {
+        color: #ffffff;
+        font-size: $baseFontSize;
+    }
+    &__link:hover {
+        text-decoration: underline;
+    }
+}
+.menu-1-btn {
+    background-image: url(menu-btn.svg);
+    width: 50px;
+    height: 50px;
+    border-radius: 13px;
+    border: none;
+}
+.menu-1-btn:active {
+    transform: translateY(4px);
+    border: solid 2px #000000;
+}
+.menu-1-hidden {
+    display: none;  // меню скрыто
+}
+
+.menu-2 {
+        border-radius: 20px;
+        border: solid 3px $base-yellow;
+        display: flex;
+        flex-direction: row;
+        gap: 24px;
+        padding: 24px;
+        right: 100px;
+        position: absolute;
+        &__title {
+            font-size: $titleFontSize;
+            color: $base-yellow;
+        }
+        &__card {
+            position: relative; // Позволяет правильно позиционировать текст
+            display: flex;
+            flex-direction: column;
+            align-items: center; // Центрируем содержимое в карточке
+        }
+        &__link {
+            border-radius: 8px;
+            border: solid 2px $base-red;
+            width: 144px;
+            height: 48px;
+            padding: 12px;
+            background-color: $base-red;
+            text-align: center;
+            z-index: 1;
+            transition: 0.7s ease;
+
+        }
+        &__text {
+          border-radius: 8px;
+          border: solid 2px $base-red;
+          width: 144px;
+          height: 48px;
+          padding: 12px;
+          background-color: $base-yellow;
+          text-align: center;
+          z-index: 0; 
+          position: absolute;
+            top: 0px;
+        }
+        &__link:hover {
+            transform: translateY(48px);
+
+        }
+}
+.section4 {
+    min-height: 400px;
+    background-color: $base-yellow;
+    display: flex;
+    flex-direction: column;
+    &__content {
+        display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            padding-left: 80px;
+            padding-right: 80px;
+    }
+    &__title {
+        font-size: $titleFontSize;
+        margin-left: 60px;
+    }
+    &__form {
+        border-radius: 8px;
+        display: flex;
+        flex-direction: column;
+        padding-top: 24px;
+    }
+    &__labels {
+        padding-top: 20px;
+        padding-bottom: 8px;
+    }
+    &__input {
+        border: solid 2px $base-red;
+        border-radius: 20px;
+        background: 0000;
+        min-height: 48px;
+        width: 240px;
+        padding-left: 12px;
+        padding-right: 12px;
+        font-family: 'Anonymous Pro', monospace;
+    }
+    &__input:focus {
+        outline: none;
+    }
+    &__input::placeholder {
+        color: $base-purple;
+    }
+    &__btn {
+        width: 120px;
+        height: 40px;
+        background-color: $base-pink;
+        color: $base-purple;
+        border: none;
+        border-radius: 16px;
+        font-family: 'Anonymous Pro', monospace;
+        margin-top: 20px;
+        transition: 0.7s ease;
+    }
+    &__btn:hover {
+        transform: translateY(3px);
+        box-shadow: 2px 3px 10px 10px #ccc;
+    }
+    &__checkbox {
+        border-radius: 16px;
+        width: fit-content;
+        border: solid 2px $base-pink;
+        display: flex;
+        flex-direction: column;
+        padding: 12px;
+        gap: 12px;
+    }
+    &__radio {
+        margin-top: 24px;
+        display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 12p
+    }
+}
+.var {
+    display: flex;
+    gap: 8px;
+    flex-direction: row;
+    align-items: center;
+}
+.checkbox, .radio {
+  margin-top: 5px;
+  width: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.checkbox-label, .radio-label {
+  padding-left: 5px;
+  font-size: 20px;
+}
+.checkbox-input, .radio-input {
+  appearance: none;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: $base-purple;
+  box-shadow: inset 0 0 5px rgb(0 0 0 / 0.2);
+  border-radius: 10px;
+  border: 1px solid #FFFFFF;
+  transition: 500ms;
+}
+
+.radio-input {
+  border-radius: 50%;
+}
+.checkbox-input::after,
+.radio-input::after {
+  content: url(Vector\ 1\ \(1\).svg);
+  position: absolute;
+  top: -2px;
+  left: 4px;
+  width: 0px;
+  height: 0px;
+  font-size: 26px;
+  transition: 500ms;
+  overflow: hidden;
+}
+
+.radio-input::after {
+    content: url(Vector\ 1\ \(1\).svg);
+}
+.checkbox-input:checked::after,
+.radio-input:checked::after {
+  width: 30px;
+  height: 30px;
+  transition: 500ms;
+}
+.checkbox-input:disabled,
+.radio-input:disabled {
+  background: #ccc;
+  border-color: #ccc;
+}
+
+.checkbox-input:disabled::after,
+.radio-input:disabled::after {
+  filter: grayscale(100%);
+}
+
+
+
